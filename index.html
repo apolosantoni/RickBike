@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick Bike - Serviços de bicicletaria.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+     <header>
+        <a href="#" class="brand"> Rick Bike</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Inicial</a>
+                <a href="#">Serviços</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+     </header>   
+     <section class="home">
+         <video class="video-slide active" src="https://vod-progressive.akamaized.net/exp=1667280972~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4749%2F16%2F423749802%2F1833713135.mp4~hmac=baf73190b534e569d9c64a385ee0a0d659311dd309104a04b50992585d195973/vimeo-prod-skyfire-std-us/01/4749/16/423749802/1833713135.mp4" autoplay muted loop></video>
+         <video class="video-slide" src="https://vod-progressive.akamaized.net/exp=1667281077~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F460%2F11%2F277303712%2F1036831052.mp4~hmac=c92596dfc06c406ed76cc88c16e09a497fe02c6d2a9c8c9cc5550538580457b1/vimeo-prod-skyfire-std-us/01/460/11/277303712/1036831052.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="https://media.istockphoto.com/id/1080816074/pt/v%C3%ADdeo/woman-entrepreneur.mp4?s=mp4-640x640-is&k=20&c=p2zi6bmjuTktFqjAelGxPFdVVPkwA_CjRvArC6_nyyE=" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Biciletas <br><span> uma paixão </span></h1>
+            <p>O veiculo de locomoção mais prático, saudavel e economico para todo monento e estações do ano, a ferramenta de locomoção, transporte de pessoas e cargas, silenciosa e pratica. Pode ser alterada e utilizada por toda uma vida, sempre há uma para cada tipo de pessoa e finalidade qual a sua ?</p>
+            <a href="#">Leia mais</a>
+        </div>
+        <div class="content">
+            <h1>Verão <br><span> Saudavel</span></h1>
+            <p>O veiculo de locomoção mais prático, saudavel e economico para todo monento e estações do ano, a ferramenta de locomoção, transporte de pessoas e cargas, silenciosa e pratica. Pode ser alterada e utilizada por toda uma vida, sempre há uma para cada tipo de pessoa e finalidade qual a sua ?</p>
+            <a href="#">Leia mais</a>
+        </div>
+        <div class="content">
+            <h1>Serviços <br><span> Produtos</span></h1>
+            <p>O veiculo de locomoção mais prático, saudavel e economico para todo monento e estações do ano, a ferramenta de locomoção, transporte de pessoas e cargas, silenciosa e pratica. Pode ser alterada e utilizada por toda uma vida, sempre há uma para cada tipo de pessoa e finalidade qual a sua ?</p>
+            <a href="#">Leia mais</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>           
+            <div class="nav-btn"></div>           
+            <div class="nav-btn"></div>           
+        </div>
+     </section>
+     <script type="text/javascript">
+        // Javascript para menu de navegação responsiva
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", ()=>{
+            menuBtn.classList.toggle("active")
+            navigation.classList.toggle("active")
+        })
+
+        //Javascript para video slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const containers = document.querySelectorAll(".content");
+        
+        var sliderNav = function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            })
+            btns[manual].classList.add("active");
+
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            })
+            slides[manual].classList.add("active");
+
+            containers.forEach((container)=>{
+                container.classList.remove("active");
+            })
+            containers[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+
+            })
+        })
+
+     </script>
+</body>
+</html>
